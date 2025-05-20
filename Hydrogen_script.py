@@ -24,6 +24,9 @@ uncertainty_subtypes = {
     for subtype, keywords in uncertainty_dict["uncertainty_subtypes"].items()
 }
 
+framing_dict = load_dict(Path("dictionaries/framing_keywords.json"))
+# Load orchestration keyword dictionary
+orchestration_keywords = load_dict(Path("dictionaries/orchestration_keywords.json"))
 
 # Read metadata
 metadata = pd.read_csv("earnings_to_search.csv")
@@ -59,6 +62,13 @@ for idx, row in sampled.iterrows():
                     }
                     matched_subtypes = [s for s, hits in matched_uncertainty_subtypes.items() if hits]
 
+                    matched_framing = []
+                    for category, framing_words in framing_dict.items():
+                        if any(fw in combined_text for fw in framing_words):
+                            matched_framing.append(category)
+                    # Orchestration/coordination terms
+                    matched_coordination_terms = [kw for kw in orchestration_keywords if kw in combined_text]
+
                     results.append({
                         "company": row["ticker"],
                         "date": row["date"],
@@ -80,6 +90,10 @@ for idx, row in sampled.iterrows():
                         "interaction": len(matched_uncertainty_subtypes.get("interaction", [])),
                         # "uncertainty_subtypes_text": ", ".join(matched_subtypes),
                         "uncertainty_subtypes": len(matched_subtypes),
+                        "framing": ", ".join(matched_framing),
+                        "framing_count": len(matched_framing),
+                        "coordination_terms": ", ".join(matched_coordination_terms),
+                        "coordination_term_count": len(matched_coordination_terms),
                         "sentence": sentence.strip(),
                         "context_before": context_before.strip(),
                         "context_after": context_after.strip()
@@ -108,6 +122,10 @@ columns = [
     "ecosystem",
     "business_model",
     "interaction",
+    "framing",
+    "framing_count",
+    "coordination_terms",
+    "coordination_term_count",
     "sentence",
     "context_before",
     "context_after"
@@ -115,3 +133,22 @@ columns = [
 df_results = df_results[columns]
 df_results.to_excel(output_path, index=False)
 print(f"Saved {len(results)} matched sentences to {output_path}")
+
+# Filter: co-occurrence of ecosystem uncertainty and coordination terms
+df_filtered = df_results[(df_results["ecosystem"] > 0) & (df_results["coordination_term_count"] > 0)]
+
+# Save filtered co-occurrence subset
+filtered_output_path = output_dir / f"cooccurrence_ecosystem_coordination_{dt.date.today()}.xlsx"
+df_filtered.to_excel(filtered_output_path, index=False)
+print(f"Saved {len(df_filtered)} co-occurrence rows to {filtered_output_path}")
+
+# Filter: framing of uncertainty in coordination context
+df_framing_coord = df_results[
+    (df_results["coordination_term_count"] > 0) &
+    (df_results["framing"].str.contains("opportunity|risk", case=False, na=False))
+]
+
+# Save filtered framing vs. coordination subset
+framing_coord_output_path = output_dir / f"framing_coordination_{dt.date.today()}.xlsx"
+df_framing_coord.to_excel(framing_coord_output_path, index=False)
+print(f"Saved {len(df_framing_coord)} framing-coordination rows to {framing_coord_output_path}")

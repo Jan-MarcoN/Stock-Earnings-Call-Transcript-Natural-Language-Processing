@@ -1,0 +1,18 @@
+{
+  "opportunity": [
+    "opportunity", "potential", "enable", "benefit", "advantage", "value creation", "competitive edge",
+    "growth potential", "game changer", "scaling opportunity", "expansion", "value proposition"
+  ],
+  "risk": [
+    "risk", "challenge", "barrier", "obstacle", "issue", "problem", "uncertainty", "exposure", "threat",
+    "delay", "limitation", "weakness", "setback", "vulnerability"
+  ],
+  "hedged": [
+    "might", "could", "possibly", "potentially", "subject to", "expected to", "anticipated", "dependent on",
+    "tentative", "not guaranteed", "under discussion", "under review", "considering"
+  ],
+  "assertive": [
+    "will", "committed", "confident", "on track", "guaranteed", "definitely", "clear path", "no doubt",
+    "secured", "fully implemented", "locked in", "ensured", "firm decision"
+  ]
+}
