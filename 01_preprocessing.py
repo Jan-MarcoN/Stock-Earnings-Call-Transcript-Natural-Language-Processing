@@ -22,8 +22,8 @@ hydrogen_keywords = set(kw.lower() for sublist in hydrogen_dict.values() for kw 
 metadata = pd.read_csv("earnings_to_search.csv")
 
 # Sample 100 random transcripts
-sampled = metadata.sample(n=min(100, len(metadata)), random_state=42)
-# sampled = metadata
+# sampled = metadata.sample(n=min(100, len(metadata)), random_state=42)
+sampled = metadata
 
 results = []
 
@@ -41,8 +41,8 @@ for idx, row in sampled.iterrows():
             for i, sentence in enumerate(sentences):
                 context_before = " ".join(sentences[max(i - 2, 0):i])
                 context_after = " ".join(sentences[i + 1:i + 4])
-                combined_text = " ".join(sentences[max(i - 2, 0):i + 4]).lower()
-                matched_hydrogen = [kw for kw in hydrogen_keywords if kw in combined_text]
+                # Only match hydrogen keywords in the main sentence
+                matched_hydrogen = [kw for kw in hydrogen_keywords if kw in sentence.lower()]
 
                 if matched_hydrogen:
                     results.append({

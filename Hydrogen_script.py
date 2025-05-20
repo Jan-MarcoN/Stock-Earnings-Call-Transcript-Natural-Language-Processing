@@ -52,7 +52,8 @@ for idx, row in sampled.iterrows():
                 context_before = " ".join(sentences[max(i - 2, 0):i])
                 context_after = " ".join(sentences[i + 1:i + 4])
                 combined_text = " ".join(sentences[max(i - 2, 0):i + 4]).lower()
-                matched_hydrogen = [kw for kw in hydrogen_keywords if kw in combined_text]
+                # Only match hydrogen keywords in the main sentence
+                matched_hydrogen = [kw for kw in hydrogen_keywords if kw in sentence.lower()]
                 if matched_hydrogen:
                     matched_uncertainty_general = [kw for kw in general_uncertainty_keywords if kw in combined_text]
                     matched_certainty = [kw for kw in uncertainty_dict["certainty"] if kw.lower() in combined_text]
