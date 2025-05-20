@@ -82,11 +82,14 @@ for _, row in df.iterrows():
 df_results = pd.DataFrame(results)
 output_path = output_dir / f"hydrogen_matches_{dt.date.today()}.xlsx"
 df_results.to_excel(output_path, index=False)
+print(f"Saved {len(df_results)} matched sentences to {output_path}")
 
 # --- Save filtered outputs ---
 # Ecosystem + coordination co-occurrence
 df_ecosystem_coord = df_results[(df_results["ecosystem"] > 0) & (df_results["coordination_term_count"] > 0)]
 df_ecosystem_coord.to_excel(output_dir / f"cooccurrence_ecosystem_coordination_{dt.date.today()}.xlsx", index=False)
+filtered_output_path = output_dir / f"cooccurrence_ecosystem_coordination_{dt.date.today()}.xlsx"
+print(f"Saved {len(df_ecosystem_coord)} co-occurrence rows to {filtered_output_path}")
 
 # Framing in coordination context
 df_framing_coord = df_results[
@@ -94,6 +97,8 @@ df_framing_coord = df_results[
     (df_results["framing"].str.contains("opportunity|risk", case=False, na=False))
 ]
 df_framing_coord.to_excel(output_dir / f"framing_coordination_{dt.date.today()}.xlsx", index=False)
+framing_coord_output_path = output_dir / f"framing_coordination_{dt.date.today()}.xlsx"
+print(f"Saved {len(df_framing_coord)} framing-coordination rows to {framing_coord_output_path}")
 
 
 # --- Analyze trends post-extraction ---
@@ -123,6 +128,8 @@ with pd.ExcelWriter(output_dir / f"ecosystem_trend_summary_{dt.date.today()}.xls
     group_company_ecosystem.to_excel(writer, sheet_name="Company_Ecosystem_Count", index=False)
     group_year_framing.to_excel(writer, sheet_name="Year_Ecosystem_Framing", index=False)
     cooccurrence_summary.to_excel(writer, sheet_name="Ecosystem_Framing_Cooccurrence", index=False)
+trend_summary_path = output_dir / f"ecosystem_trend_summary_{dt.date.today()}.xlsx"
+print(f"Saved trend summary to {trend_summary_path}")
 
 print("✅ Tagging and analysis complete.")
 print("✅ Trend analysis summaries saved.")
