@@ -1,0 +1,56 @@
+{
+  "leadership": {
+    "ecosystem_leader": [
+      "ecosystem leader", "ecosystem leaders", "platform leader", "platform leaders",
+      "orchestrator", "orchestrators", "hub", "keystone",
+      "Ökosystemführer", "Ökosystemführers", "Plattformführer", "Plattformführers",
+      "Orchestrator", "Orchestratoren", "Schlüsselakteur", "Schlüsselakteure"
+    ],
+    "dominator": [
+      "dominator", "dominators", "controller", "controllers", "monopolizer", "monopolizers", "integrator", "integrators",
+      "Dominator", "Dominatoren", "Kontrolleur", "Kontrolleure", "Monopolisierer", "Monopolisierer", "Integrator", "Integratoren"
+    ]
+  },
+  "direct_value_creation": {
+    "supplier": [
+      "supplier", "suppliers", "component provider", "technology supplier", "vendor", "vendors",
+      "Zulieferer", "Zulieferer", "Komponentenlieferant", "Komponentenlieferanten", "Technologieanbieter", "Anbieter", "Anbieterin", "Anbieterinnen"
+    ],
+    "assembler": [
+      "assembler", "assemblers", "integrator", "integrators", "producer", "producers", "manufacturer", "manufacturers",
+      "Systemintegrator", "Systemintegratoren", "Hersteller", "Herstellerin", "Produzent", "Produzenten"
+    ],
+    "complementor": [
+      "complementor", "complementors", "add-on provider", "partner", "partners", "complementary innovator", "complementary innovators",
+      "Komplementäranbieter", "Komplementäranbieterin", "Partner", "Partnerin", "Ergänzungsanbieter", "Komplementärakteur", "Komplementärakteure"
+    ],
+    "user": [
+      "user", "users", "end-user", "end-users", "consumer", "consumers", "prosumer", "prosumers",
+      "Nutzer", "Nutzerin", "Nutzerinnen", "Endnutzer", "Endnutzerin", "Verbraucher", "Verbraucherin", "Prosument", "Prosumentin"
+    ]
+  },
+  "value_support": {
+    "expert": [
+      "expert", "experts", "knowledge provider", "scientist", "scientists", "consultant", "consultants",
+      "Experte", "Expertin", "Experten", "Wissensanbieter", "Wissenschaftler", "Wissenschaftlerin", "Berater", "Beraterin"
+    ],
+    "champion": [
+      "champion", "champions", "advocate", "advocates", "bridge builder", "bridge builders", "connector", "connectors",
+      "Vorkämpfer", "Förderer", "Brückenbauer", "Vernetzer", "Befürworter", "Fürsprecher", "Netzwerker", "Verbindungsmacher"
+    ]
+  },
+  "entrepreneurial_ecosystem": {
+    "entrepreneur": [
+      "entrepreneur", "entrepreneurs", "founder", "founders", "startup", "startups", "venture initiator", "venture initiators",
+      "Unternehmer", "Unternehmerin", "Gründer", "Gründerin", "Start-up", "Startup", "Neugründer", "Neugründerin"
+    ],
+    "sponsor": [
+      "sponsor", "sponsors", "funder", "funders", "investor", "investors", "strategic partner", "strategic partners",
+      "Förderer", "Geldgeber", "Finanzierer", "Investor", "Investoren", "Strategischer Partner", "Partner mit Finanzierung"
+    ],
+    "regulator": [
+      "regulator", "regulators", "policy maker", "policy makers", "government agency", "institution", "institutions",
+      "Regulator", "Regulierungsbehörde", "Regulierer", "Politikgestalter", "Regierungsstelle", "Institution", "Institutionen"
+    ]
+  }
+}
