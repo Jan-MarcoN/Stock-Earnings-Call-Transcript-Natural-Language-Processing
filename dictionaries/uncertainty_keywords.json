@@ -1,55 +1,76 @@
 {
   "certainty": [
-    "gewiss", "sicher", "zweifellos", "definitiv", "klar", "eindeutig", "fest", "unbestreitbar",
-    "unzweifelhaft", "unumstößlich", "konkret", "bestimmt", "garantiert", "verbindlich",
-    "Planungssicherheit", "Verlässlichkeit", "verlässlich", "klar definiert", "sichergestellt", "absehbar"
+    "certain", "secure", "undoubtedly", "definitely", "clear", "unambiguous", "firm", "indisputable",
+    "unquestionable", "irrefutable", "concrete", "specific", "guaranteed", "binding",
+    "planning certainty", "reliability", "reliable", "clearly defined", "ensured", "foreseeable",
+    "assured", "inevitable", "committed"
   ],
   "uncertainty_general": [
-    "möglicherweise", "eventuell", "unsicher", "unbestimmt", "unklar", "zweifelhaft",
-    "wahrscheinlich", "vielleicht", "unvorhersehbar", "risikobehaftet", "ungewiss", "fraglich",
-    "vermutlich", "potenziell", "ungeklärt", "nicht abschätzbar", "nicht vorhersehbar",
-    "unberechenbar", "unplanbar", "instabil", "Volatilität", "Abweichung", "Fluktuation"
+    "possibly", "potentially", "uncertain", "indefinite", "unclear", "doubtful",
+    "probably", "perhaps", "unpredictable", "risky", "ambiguous", "questionable",
+    "presumably", "potential", "unresolved", "not assessable", "not foreseeable",
+    "unreliable", "unplannable", "unstable", "volatility", "deviation", "fluctuation",
+    "subject to change", "tentative", "in flux"
   ],
   "uncertainty_subtypes": {
     "technological": [
-      "technological uncertainty", "technology uncertainty", "emerging technology",
+      "technological uncertainty", "technological",
+      "technology uncertainty", "technology",
+      "emerging technology",
       "radical innovation", "breakthrough technology", "disruptive technology",
-      "technologische Unsicherheit", "technologische Ungewissheit",
-      "emergente Technologie", "radikale Innovation", "bahnbrechende Technologie",
-      "disruptive Technologie", "Technologieentwicklung unsicher", "nicht ausgereift",
-      "unausgereifte Technologie", "nicht erprobt", "neuartige Technologie"
+      "technological uncertainty", "technological",
+      "emerging technology", "radical innovation",
+      "breakthrough technology", "disruptive technology", "technology development uncertain",
+      "not mature", "immature technology", "not tested", "novel technology",
+      "low TRL", "engineering challenges", "still in development"
     ],
     "market_application": [
-      "application uncertainty", "market uncertainty", "commercialization uncertainty",
-      "use case uncertainty", "demand uncertainty", "multi-domain application",
-      "Anwendungsunsicherheit", "Marktunsicherheit", "Kommerzialisierungsunsicherheit",
-      "Nachfrageunsicherheit", "Anwendungsvielfalt", "Nutzungsunsicherheit",
-      "Marktzugang unklar", "keine Marktnachfrage", "Anwendungsgebiete unklar",
-      "unreifer Markt", "Marktpotenzial unbekannt"
+      "application uncertainty", "application",
+      "market uncertainty", "market",
+      "commercialization uncertainty", "commercialization",
+      "use case uncertainty", "use case",
+      "demand uncertainty", "demand",
+      "multi-domain application",
+      "application uncertainty", "application",
+      "market access unclear", "no market demand",
+      "unclear application areas", "immature market", "market potential unknown",
+      "go-to-market uncertainty", "go-to-market",
+      "value proposition unclear", "market validation pending"
     ],
     "ecosystem": [
-      "ecosystem uncertainty", "interdependence uncertainty", "complement uncertainty",
-      "coordination uncertainty", "network uncertainty", "systemic uncertainty",
-      "Ökosystemunsicherheit", "Interdependenzunsicherheit", "Komplementärunsicherheit",
-      "Koordinationsunsicherheit", "Netzwerkunsicherheit", "systemische Unsicherheit",
-      "Abhängigkeit unklar", "Partnerstruktur instabil", "fehlende Standardisierung",
-      "Governance unklar", "Rollenverteilung ungeklärt"
+      "ecosystem uncertainty", "ecosystem",
+      "interdependence uncertainty", "interdependence",
+      "complement uncertainty", "complement",
+      "coordination uncertainty", "coordination",
+      "network uncertainty", "network",
+      "systemic uncertainty", "systemic",
+      "dependency unclear", "unstable partner structure", "lack of standardization",
+      "governance unclear", "role distribution unresolved",
+      "missing partners", "coordination gaps", "ecosystem not formed"
     ],
     "business_model": [
-      "business model uncertainty", "value capture uncertainty", "value appropriation dilemma",
-      "commercialization strategy", "appropriability uncertainty", "design tension",
-      "Geschäftsmodellunsicherheit", "Wertabschöpfungsunsicherheit", "Wertaneignungsdilemma",
-      "Kommerzialisierungsstrategie", "Aneignungsunsicherheit", "Gestaltungsspannung",
-      "Tragfähiges Geschäftsmodell fehlt", "Unklarheit Erlösmodell", "Finanzierungsmodell unklar",
-      "Rentabilität nicht erwiesen", "Business Case unsicher"
+      "business model uncertainty", "business model",
+      "value capture uncertainty", "value capture",
+      "value appropriation dilemma",
+      "commercialization strategy", "appropriability uncertainty", "appropriability",
+      "design tension",
+      "viable business model missing", "revenue model unclear", "financing model unclear",
+      "profitability not proven", "business case uncertain",
+      "uncertain revenue model", "profitability not guaranteed", "no clear ROI"
     ],
     "interaction": [
-      "interaction of uncertainties", "combined uncertainty", "sequential uncertainty",
-      "pooled uncertainty", "reciprocal uncertainty", "interacting uncertainties",
-      "Wechselwirkungen von Unsicherheiten", "kombinierte Unsicherheit", "sequentielle Unsicherheit",
-      "gepoolte Unsicherheit", "reziproke Unsicherheit", "interagierende Unsicherheiten",
-      "multiple Unsicherheiten", "sich überlagernde Unsicherheiten", "komplexe Unsicherheitslage",
-      "mehrschichtige Unsicherheiten", "Vielschichtigkeit", "Verkettung von Unsicherheiten"
+      "interaction of uncertainties", "interaction of",
+      "combined uncertainty", "combined",
+      "sequential uncertainty", "sequential",
+      "pooled uncertainty", "pooled",
+      "reciprocal uncertainty", "reciprocal",
+      "interacting uncertainties", "interacting",
+      "multiple uncertainties", "multiple",
+      "overlapping uncertainties", "overlapping",
+      "complex uncertainty landscape",
+      "multilayered uncertainties", "multilayered",
+      "multi-dimensionality", "chain of uncertainties", "chain of",
+      "interlocking risks", "mutual dependencies", "cross-cutting uncertainty", "cross-cutting"
     ]
   }
 }
