@@ -32,7 +32,7 @@ orchestration_keywords = load_dict(Path("dictionaries/orchestration_keywords.jso
 metadata = pd.read_csv("earnings_to_search.csv")
 
 # Sample 100 random transcripts
-sampled = metadata.sample(n=min(1000, len(metadata)), random_state=42)
+sampled = metadata.sample(n=min(100, len(metadata)), random_state=42)
 # sampled = metadata
 
 results = []
@@ -104,7 +104,7 @@ for idx, row in sampled.iterrows():
 
 # Save results to Excel
 OUT_ROOT = Path("outputs")
-output_dir = OUT_ROOT / str(dt.date.today())
+output_dir = OUT_ROOT / "full_{dt.date.today()}"
 output_dir.mkdir(parents=True, exist_ok=True)
 output_path = output_dir / f"hydrogen_matches_{dt.date.today()}.xlsx"
 df_results = pd.DataFrame(results)
