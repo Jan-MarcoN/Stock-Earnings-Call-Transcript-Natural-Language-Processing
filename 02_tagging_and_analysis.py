@@ -13,7 +13,8 @@ output_dir = OUT_ROOT / str(dt.date.today())
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # --- Load preprocessed data ---
-preprocessed_path = output_dir / f"preprocessed_sentences_{dt.date.today()}.xlsx"
+preprocessed_path = output_dir / f"preprocessed_with_prices.xlsx"
+# preprocessed_path = output_dir / f"preprocessed_sentences_{dt.date.today()}.xlsx"
 df = pd.read_excel(preprocessed_path)
 
 # --- Load keyword dictionaries ---
