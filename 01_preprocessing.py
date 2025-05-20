@@ -7,6 +7,9 @@ import random
 from nltk.tokenize import sent_tokenize
 import sys
 
+# === SCRIPT TO EXTRACT HYDROGEN-RELATED SENTENCES FROM TRANSCRIPTS
+#     AND APPEND STOCK PRICES ON EARNINGS DATES ===
+
 nltk.download("punkt")
 
 def load_dict(path: Path):
@@ -79,12 +82,13 @@ df_results.to_excel(output_path, index=False)
 print(f"Saved {len(results)} matched sentences to {output_path}")
 
 
-
+# === LOAD EARNINGS CALL METADATA ===
 # Load the earnings call dates
 # This CSV should contain at least two columns: 'ticker' and 'date'
 earnings_df = pd.read_csv("earnings_to_search.csv")
 earnings_df["date"] = pd.to_datetime(earnings_df["date"])
 
+# === FUNCTION TO MATCH EARNINGS-DAY PRICES WITH TICKER + DATE ===
 def process_stock_folder(folder_path):
     # Create an output directory using today's date
     output_dir = Path("outputs") / str(dt.date.today())
@@ -129,6 +133,10 @@ def process_stock_folder(folder_path):
         df_prices.to_excel(output_file, index=False)
         print(f"✅ Saved earnings day stock prices for all stocks to {output_file}")
 
+        # === RENAME COLUMNS FOR MERGING ===
+        df_prices = df_prices.rename(columns={"ticker": "company", "date": "price_date"})
+
+        # === MERGE PREPROCESSED SENTENCES WITH EARNINGS-DAY STOCK PRICES ===
         try:
             # Load preprocessed hydrogen sentence dataset
             df_preprocessed = pd.read_excel(output_path)
